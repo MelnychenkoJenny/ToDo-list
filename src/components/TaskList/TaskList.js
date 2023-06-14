@@ -16,12 +16,12 @@ const getVisibleTasks = (tasks, statusFilter) => {
 };
 
 export const TaskList = () => {
-  const tasks = useSelector(getTasks);
+  const {items} = useSelector(getTasks);
   
   // Отримуємо значення фільтра із стану Redux
   const statusFilter = useSelector(getStatusFilter);
   // Обчислюємо масив завдань, які необхідно відображати в інтерфейсі
-  const visibleTasks = getVisibleTasks(tasks, statusFilter);
+  const visibleTasks = getVisibleTasks(items, statusFilter);
 
   return (
     <ul className={css.list}>

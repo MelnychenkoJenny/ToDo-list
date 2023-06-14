@@ -3,9 +3,9 @@ import { getTasks } from "redux/selectors";
 import css from "./TaskCounter.module.css";
 
 export const TaskCounter = () => {
-  const tasks = useSelector(getTasks)
+  const {items} = useSelector(getTasks)
 
-  const count = tasks.reduce(
+  const count = items.reduce(
     (acc, task) => {
       if (task.completed) {
         acc.completed += 1;
